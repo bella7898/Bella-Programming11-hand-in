@@ -13,18 +13,20 @@ public class Main {
 
         newAr[a.length] = newData;
         //add the new data to the last index of newAr
+        //*---here---*
             
             for(int i = 0; i < a.length;i++){
+
                 a[i] = newAr[i];
-                //the index 'i' in newAr is now set to equal x
+                //copy from a to newAr
+
             }return newAr;
             //returns newAr with all data copied from a
-            //and newData added to the last index position
-        }
+        }//and also the new data from *---here---*
 
 
-    private static int[] delFrom(int[] a, int rmvData) {
-        //new method called delFrom with parameters 'a' as an int array and the int rmvData.
+    private static int[] delFrom(int[] a) {
+        //new method called delFrom with parameters 'a' as an int array
 
         int x;
         //declare int 'i'
@@ -33,9 +35,11 @@ public class Main {
         //create a new int array 'newAr' set with one less index position than 'a'
 
         for(int i =0; i < a.length - 1; i++){
+
             a[i] = newAr[i];
             //copies all the data from 'a' to 'newAr'
             //except for the last num 
+
         }return newAr;
     }
 
@@ -61,32 +65,29 @@ public class Main {
                 newAr[i] = insertNum; //will insert num in index position 2
 
             } else { //if i > indexNum
-                newAr[i] = a[i-1];
+                a[i-1] = newAr[i];
             }
         }
         return newAr;
+        //return updated newAr;
     }
 
     public static void main(String[] args) {
         int[] a = {5, 4, 3, 2, 1}; //5 index positions in length [0, 1, 2, 3, 4]
         
+        //uses method to add a number to an existing array (last index position)
+        //output: [5, 4, 3, 2, 1, 0]
         int newData = 0;
         int[] array1 = addTo(a, newData);
-        while(i < array1.length){
-            x = array1[i];
-            System.out.println(x);
-            i++;
-        }
+        System.out.println(Arrays.toString(array1));
+        
+        //uses method to delete a number from an existing array (last index position)
+        //output: [5, 4, 3, 2, 1, 0]
+        int[] array2 = delFrom(a);
+        System.out.println(Arrays.toString(array2));
 
-        int rmvData = 2;
-
-        int[] array2 = delFrom(a, rmvData);
-        while (i < array2.length) {
-            x = array2[i];
-            System.out.println(x);
-            i++;
-        }
-
+        //uses method to insert a number into a given index position
+        //output: [5, 4, 0, 3, 2, 1]
         int insertNum = 0;
         int indexNum = 2;
 
