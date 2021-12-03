@@ -6,7 +6,6 @@ public class Main {
         //new method called addTo with parameters 'a' as an int array and the int newData.
 
         int x;
-        //declare int 'i' and 'x'
 
         int[] newAr = new int[a.length + 1];
         //create a new int array 'newAr' set with one more index position than 'a'
@@ -14,58 +13,58 @@ public class Main {
         newAr[a.length] = newData;
         //add the new data to the last index of newAr
         //*---here---*
-            
-            for(int i = 0; i < a.length;i++){
 
-                a[i] = newAr[i];
-                //copy from a to newAr
+        for(int i = 0; i < a.length;i++){
+            x = a[i];
+            newAr[i] = x;
+            //copy from a to newAr
 
-            }return newAr;
-            //returns newAr with all data copied from a
-        }//and also the new data from *---here---*
+        }return newAr;
+        //returns newAr with all data copied from a
+    }//and also the new data from *---here---*
 
 
     private static int[] delFrom(int[] a) {
         //new method called delFrom with parameters 'a' as an int array
 
         int x;
-        //declare int 'i'
 
         int[] newAr = new int[a.length - 1];
         //create a new int array 'newAr' set with one less index position than 'a'
 
         for(int i =0; i < a.length - 1; i++){
-
-            a[i] = newAr[i];
+            x = a[i];
+            newAr[i] = x;
             //copies all the data from 'a' to 'newAr'
-            //except for the last num 
+            //except for the last num
 
         }return newAr;
     }
 
     private static int[] insertInt(int[] a, int insertNum, int indexNum) {
         //new method called insertIn with parameters 'a', insertNum and the int indexNum.
-        
+
         int x;
-        //declare needed variables
 
         int y = a.length + 1;
         int[] newAr = new int[y];
         //declare new array 'newAr' with 1 more index position than 'a'
 
         //declare int to equal 0
-        //loop while i is smaller than y (a.length + 1) 
+        //loop while i is smaller than y (a.length + 1)
         //increment to i each loop
         for(int i = 0; i < y; i++) {
 
             if (i < indexNum) { //when i is 0 or 1 in my test case
-                a[i] = newAr[i]; //simply copy from a to newAr
+                x = a[i];
+                newAr[i] = x; //simply copy from a to newAr
 
             } else if (i == indexNum) { //i is 2 in test
                 newAr[i] = insertNum; //will insert num in index position 2
 
             } else { //if i > indexNum
-                a[i-1] = newAr[i];
+                x = a[i-1];
+                newAr[i] = x;
             }
         }
         return newAr;
@@ -74,15 +73,15 @@ public class Main {
 
     public static void main(String[] args) {
         int[] a = {5, 4, 3, 2, 1}; //5 index positions in length [0, 1, 2, 3, 4]
-        
+
         //uses method to add a number to an existing array (last index position)
         //output: [5, 4, 3, 2, 1, 0]
         int newData = 0;
         int[] array1 = addTo(a, newData);
         System.out.println(Arrays.toString(array1));
-        
+
         //uses method to delete a number from an existing array (last index position)
-        //output: [5, 4, 3, 2, 1, 0]
+        //output: [5, 4, 3, 2]
         int[] array2 = delFrom(a);
         System.out.println(Arrays.toString(array2));
 
@@ -94,5 +93,11 @@ public class Main {
         int[] array3 = insertInt(a, insertNum, indexNum);
         System.out.println(Arrays.toString(array3));
 
+    /*
+    BW
+    Unit 3 Assignment
+    'Add/Insert/Delete Arrays'
+    2021-12-02
+     */
     }
 }
