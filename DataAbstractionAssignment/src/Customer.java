@@ -14,17 +14,18 @@ public class Customer {
     public static final String SAVING = "Saving";
     private final int OVERDRAFT = 100;
 
-    Customer(){
+    Customer() {
         //create default constructor
         this.name = "Customer";
         this.accountNumber++;
         this.deposits = new ArrayList<>();
         this.withdraws = new ArrayList<>();
     }
-    Customer(String name, int accountNumber, double checkDeposit, double savingDeposit){
+
+    Customer(String name, int accountNumber, double checkDeposit, double savingDeposit) {
         //constructor code here
-        this.name=name;
-        this.accountNumber=accountNumber;
+        this.name = name;
+        this.accountNumber = accountNumber;
         this.deposits = new ArrayList<>();
         this.withdraws = new ArrayList<>();
 
@@ -32,7 +33,7 @@ public class Customer {
         deposit(savingDeposit, SAVING);
     }
 
-    public void deposit(double amt, String account){
+    public void deposit(double amt, String account) {
         //your code here
         // Requires: amount, date, account
         // Modifies: this.deposits
@@ -48,15 +49,17 @@ public class Customer {
         withdraws.add(new Withdraw(amt, currentTime(), account));
         checkOverdraft(account);
     }
-    private void checkOverdraft(String account){
+
+    private void checkOverdraft(String account) {
         // your code here
         // Requires: account
         // Modifies: this.withdrawn
         // Effects: check for negative account (if true, add overdraft withdrawal)
-        if (returnBalance(account) < 0){
+        if (returnBalance(account) < 0) {
             withdraws.add(new Withdraw(OVERDRAFT, currentTime(), account));
         }
     }
+
     public double returnBalance(String account) {
         // Requires: account
         // Modifies: sum
@@ -65,13 +68,13 @@ public class Customer {
 
         for (Deposit i : deposits) {
             if (i.getAccount().equals(account)) {
-                sum += + i.getAmount();
+                sum += +i.getAmount();
             }
         }
 
         for (Withdraw i : withdraws) {
-            if ( i.getAccount().equals(account) ) {
-                sum -= + i.getAmount();
+            if (i.getAccount().equals(account)) {
+                sum -= +i.getAmount();
             }
         }
         return sum;
@@ -81,22 +84,24 @@ public class Customer {
         return returnBalance(CHECKING) + returnBalance(SAVING);
     }
 
-    private Date currentTime (){
+    private Date currentTime() {
         return new java.util.Date();
     }
 
-    public int getOverdraftFee(){
+    public int getOverdraftFee() {
         return OVERDRAFT;
     }
+
     //do not modify
-    public void displayDeposits(){
-        for(Deposit d : deposits){
+    public void displayDeposits() {
+        for (Deposit d : deposits) {
             System.out.println(d);
         }
     }
+
     //do not modify
-    public void displayWithdraws(){
-        for(Withdraw w : withdraws){
+    public void displayWithdraws() {
+        for (Withdraw w : withdraws) {
             System.out.println(w);
         }
     }

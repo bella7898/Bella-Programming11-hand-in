@@ -5,14 +5,14 @@ public class Deposit {
     private Date date;
     private String account;
 
-    Deposit(double amount, Date date, String account){
+    Deposit(double amount, Date date, String account) {
         this.amount = amount;
         this.date = date;
         this.account = account;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         //your code here
         String string = "Deposit of: $" + amount + " ";
         String string1 = "Date: " + date + " ";
@@ -20,13 +20,15 @@ public class Deposit {
         return string + string1 + string2;
     }
 
-    public double getAmount(){
+    public double getAmount() {
         return amount;
     }
-    public Date getDate(){
+
+    public Date getDate() {
         return date;
     }
-    public String getAccount(){
+
+    public String getAccount() {
         return account;
     }
 }

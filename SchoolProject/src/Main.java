@@ -2,12 +2,12 @@ public class Main {
     public static void main(String[] args) {
 
         //add 3 teachers
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             School.teachers.add(new Teacher());
         }
 
         //add 10 students
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             School.students.add(new Student());
         }
 

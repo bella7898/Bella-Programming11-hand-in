@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class NewTest {
@@ -38,12 +39,12 @@ public class NewTest {
     public void checkOverdraft() {
         person.withdraw(testAmount, testAccount);
 
-        double expected = ((double)person.getOverdraftFee() + testAmount) * -1;
+        double expected = ((double) person.getOverdraftFee() + testAmount) * -1;
         assertEquals((expected + startBalance), person.returnBalance(testAccount), 0.01);
     }
 
     @Test
-    public void printDeposit(){
+    public void printDeposit() {
         Withdraw transaction = new Withdraw(100, null, null);
 
         String expected = "Withdrawal of: $100.0 Date: null From account: null.";
@@ -51,7 +52,7 @@ public class NewTest {
     }
 
     @Test
-    public void printWithdraw(){
+    public void printWithdraw() {
         Deposit transaction = new Deposit(100, null, null);
 
         String expected = "Deposit of: $100.0 Date: null Into account: null.";
@@ -59,7 +60,7 @@ public class NewTest {
     }
 
     @Test
-    public void checkBalance(){
+    public void checkBalance() {
         person.deposit(testAmount, CHECKING);
         person.deposit(testAmount, SAVING);
 

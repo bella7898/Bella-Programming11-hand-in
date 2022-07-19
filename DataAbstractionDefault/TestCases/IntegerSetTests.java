@@ -9,12 +9,12 @@ public class IntegerSetTests {
     IntegerSet testSet;
 
     @Before
-    public void setup(){
+    public void setup() {
         testSet = new IntegerSet();
     }
 
     @Test
-    public void testInsertNotThere(){
+    public void testInsertNotThere() {
         //check number is not already in set
         assertEquals(testSet.size(), 0);
         assertFalse(testSet.contains(3));
@@ -24,8 +24,9 @@ public class IntegerSetTests {
         assertEquals(testSet.size(), 1);
         assertTrue(testSet.contains(3));
     }
+
     @Test
-    public void testInsertAlreadyThere(){
+    public void testInsertAlreadyThere() {
         //insert a number
         testSet.insert(3);
         //check number is in the set

@@ -3,16 +3,16 @@ public class Course {
     //fields
     private String subject;
     private String teacher;
-    private int grade     ;
+    private int grade;
 
     //constructor
-    Course(){
+    Course() {
         subject = "course";
         teacher = "course";
-        grade = 1   ;
+        grade = 1;
     }
 
-    Course(String subject, String teacher, int grade){
+    Course(String subject, String teacher, int grade) {
         this.subject = subject;
         this.teacher = teacher;
         this.grade = grade;

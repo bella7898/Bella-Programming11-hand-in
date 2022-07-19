@@ -14,12 +14,13 @@ public class Main {
         //add the new data to the last index of newAr
         //*---here---*
 
-        for(int i = 0; i < a.length;i++){
+        for (int i = 0; i < a.length; i++) {
             x = a[i];
             newAr[i] = x;
             //copy from a to newAr
 
-        }return newAr;
+        }
+        return newAr;
         //returns newAr with all data copied from a
     }//and also the new data from *---here---*
 
@@ -32,13 +33,14 @@ public class Main {
         int[] newAr = new int[a.length - 1];
         //create a new int array 'newAr' set with one less index position than 'a'
 
-        for(int i =0; i < a.length - 1; i++){
+        for (int i = 0; i < a.length - 1; i++) {
             x = a[i];
             newAr[i] = x;
             //copies all the data from 'a' to 'newAr'
             //except for the last num
 
-        }return newAr;
+        }
+        return newAr;
     }
 
     private static int[] insertInt(int[] a, int insertNum, int indexNum) {
@@ -53,7 +55,7 @@ public class Main {
         //declare int to equal 0
         //loop while i is smaller than y (a.length + 1)
         //increment to i each loop
-        for(int i = 0; i < y; i++) {
+        for (int i = 0; i < y; i++) {
 
             if (i < indexNum) { //when i is 0 or 1 in my test case
                 x = a[i];
@@ -63,7 +65,7 @@ public class Main {
                 newAr[i] = insertNum; //will insert num in index position 2
 
             } else { //if i > indexNum
-                x = a[i-1];
+                x = a[i - 1];
                 newAr[i] = x;
             }
         }

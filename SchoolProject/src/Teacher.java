@@ -2,17 +2,17 @@ public class Teacher {
 
     //fields
     private String firstName;
-    private String lastName ;
-    private String subject  ;
+    private String lastName;
+    private String subject;
 
     //constructor
-    Teacher(){
-        firstName= "teacher";
+    Teacher() {
+        firstName = "teacher";
         lastName = "teacher";
-        subject = "teacher" ;
+        subject = "teacher";
     }
 
-    Teacher(String firstName, String lastName, String subject){
+    Teacher(String firstName, String lastName, String subject) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.subject = subject;
@@ -44,22 +44,22 @@ public class Teacher {
     }
 
     //method printTeacher to print an individual by their name (full name)
-    public static void printTeacher(String name){
-        for(int i = 0; i < School.teachers.size(); i++){
-            String info = "Name: "+ School.teachers.get(i).firstName + School.teachers.get(i).lastName + "         Subject: "+ School.teachers.get(i).subject;
+    public static void printTeacher(String name) {
+        for (int i = 0; i < School.teachers.size(); i++) {
+            String info = "Name: " + School.teachers.get(i).firstName + School.teachers.get(i).lastName + "         Subject: " + School.teachers.get(i).subject;
             String checkName = School.teachers.get(i).firstName + School.teachers.get(i).lastName;
-            if(name.equals(checkName)){
+            if (name.equals(checkName)) {
                 System.out.println(info);
             }
         }
     }
 
     //method teachersBySubject prints teachers that teach one subject
-    public static void teachersBySubject(String subject){
-        for(int i = 0; i < School.teachers.size(); i++){
-            String info = "Name: "+ School.teachers.get(i).firstName + School.teachers.get(i).lastName + "       Subject: "+ School.teachers.get(i).subject;
+    public static void teachersBySubject(String subject) {
+        for (int i = 0; i < School.teachers.size(); i++) {
+            String info = "Name: " + School.teachers.get(i).firstName + School.teachers.get(i).lastName + "       Subject: " + School.teachers.get(i).subject;
             String checkSubject = School.teachers.get(i).subject;
-            if(subject.equals(checkSubject)){
+            if (subject.equals(checkSubject)) {
                 System.out.println(info);
             }
         }

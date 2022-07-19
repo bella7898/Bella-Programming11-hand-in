@@ -5,14 +5,14 @@ public class Withdraw {
     private Date date;
     private String account;
 
-    Withdraw(double amount, Date date, String account){
+    Withdraw(double amount, Date date, String account) {
         this.amount = amount;
         this.date = date;
         this.account = account;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         //your code here
         String string = "Withdrawal of: $" + amount + " ";
         String string1 = "Date: " + date + " ";
@@ -23,9 +23,11 @@ public class Withdraw {
     public double getAmount() {
         return amount;
     }
+
     public Date getDate() {
         return date;
     }
+
     public String getAccount() {
         return account;
     }

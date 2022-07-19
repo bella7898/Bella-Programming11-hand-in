@@ -1,7 +1,7 @@
 public class Main {
 
     // Code your solution to problem number one here
-    static int problemOne(String s){
+    static int problemOne(String s) {
 
         // int answer stores our answer
         int answer = 0;
@@ -20,15 +20,16 @@ public class Main {
         char[] string = s.toCharArray();
 
         // check for each char in string if it's a vowel
-        for(char c: vowels){
-            for(char ch: string){
-                if(ch == c){
+        for (char c : vowels) {
+            for (char ch : string) {
+                if (ch == c) {
                     answer++;
                 }
             }
         }
         return answer;
     }
+
     //Code you problem number two here
     static int problemTwo(String s) {
         // answer is var for our answer
@@ -99,6 +100,7 @@ public class Main {
         // return answer
         return answer;
     }
+
     public static void main(String[] args) {
         // testing problem one
         String s1 = "ysqundfruogaxcruaqhieie";
